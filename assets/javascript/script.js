@@ -19,3 +19,4 @@ fetch('https://api.themoviedb.org/3/discover/movie?include_adult=true&include_vi
     .then(response => response.json())
     .then(response => console.log(response))
     .catch(err => console.error(err));
+hello
