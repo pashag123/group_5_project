@@ -1,24 +1,48 @@
-/* *{
-    background-color: antiquewhite;
+body {
+    background-color: rgb(241, 241, 241);
 }
-} */
 
-/* 
-div {
-    display: flex;
-} */
+h1 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration: underline;
+    background-color: rgba(248, 216, 32, 0.822);
+}
+
+p {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
 
 
 #nav {
     display: flex;
     flex-wrap: wrap;
 }
-/* 
-nav {
-    flex-basis: 75%;
-} */
 
-/* .select {
+nav {
+    background-color: rgba(38, 130, 184, 0.541);
+    flex-basis: 75%;
+}
+
+.select {
     flex-basis: 25%;
-height: 4.255rem;
-} */
+    height: 4.26rem;
+    background-color: rgba(33, 110, 155, 0.644);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-text {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+    font-size: 25px;
+    text-align: center;
+}
+
+.select:hover {
+    background-color: rgba(189, 189, 189, 0.288);
+}
+
+.smol {
+    font-size: 20px;
+}
