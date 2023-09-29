@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Movies Under The Influence</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
@@ -12,14 +13,82 @@
 
 
 
+    <header>
+
+        <h1 class="center-align">
+            Movies Under The Influence
+        </h1>
+
+    </header>
 
 
+    <ul id="dropdown1" class="dropdown-content">
+        <li><a href="#!">one</a></li>
+        <li><a href="#!">two</a></li>
+        <li class="divider"></li>
+        <li><a href="#!">three</a></li>
+    </ul>
+
+    <!-- <nav class="container"> -->
+        <!-- <div class="row ">
+            <div class="nav-wrapper col s9">
+                <form>
+                    <div class="input-field">
+                        <input id="search" type="search" placeholder="search">
+                        <label class="label-icon" for="search"><i class="material-icons"></i></label>
+                        <i class="material-icons">close</i>
+                    </div>
+                </form>
+                 <a href="#!" class="brand-logo col s1">Logo</a> -->
+                <!-- <ul class="right hide-on-med-and-down col s2">
 
 
+                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i
+                                class="material-icons right">arrow_drop_down</i></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>  
+     -->
+     <main>
+   
+     <nav>
+        <div class="nav-wrapper">
+          <form>
+            <div class="input-field">
+              <input id="search" type="search" required>
+              <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+              <i class="material-icons">close</i>
+            </div>
+          </form>
+        </div>
+      </nav>
+
+<!-- Dropdown Trigger -->
+<a class='dropdown-trigger btn select' href='#' data-target='dropdown1'>Drop Me!</a>
+
+<!-- Dropdown Structure -->
+<ul id='dropdown1' class='dropdown-content'>
+  <li><a href="#!">one</a></li>
+  <li><a href="#!">two</a></li>
+  <li class="divider" tabindex="-1"></li>
+  <li><a href="#!">three</a></li>
+  <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
+  <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
+</ul>
+
+
+    
+
+    </main>
+
+
+    <footer>
+
+    </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="./assets/javascript/script.js"></script>
-    
 </body>
 
 </html>
