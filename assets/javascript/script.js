@@ -52,14 +52,12 @@ function renderCards(movies) {
 
         <div class="card-content">
             <div class="row">
-                <div class="col">year</div>
-                <div class="col">rating</div>
+                <div class="col">${movies[i].release_date}</div>
+                <div class="col">${movies[i].vote_average}</div>
                 <div class="col">watch options</div>
             </div>
             <h2>${movies[i].title}</h2>
-            <p>I am a very simple card. I am good at containing small bits of information. I am
-                convenient
-                because I require little markup to use effectively.</p>
+            <p>${movies[i].overview}</p>
         </div>
     </div>
 </div>
