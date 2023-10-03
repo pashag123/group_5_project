@@ -43,7 +43,7 @@ function renderCards(movies) {
     <div class="card">
         <div class="card-image">
             <div>
-                <img src="">
+                <img src="https://image.tmdb.org/t/p/original/${movies[i].poster_path}">
             </div>
             
             <a class="btn-floating halfway-fab waves-effect waves-light red"><i
@@ -52,9 +52,8 @@ function renderCards(movies) {
 
         <div class="card-content">
             <div class="row">
-                <div class="col">${movies[i].release_date}</div>
-                <div class="col">${movies[i].vote_average}</div>
-                <div class="col">watch options</div>
+                <div class="col s6 m6 l6">${movies[i].release_date}</div>
+                <div class="col s6 m6 l6">${movies[i].vote_average}</div>
             </div>
             <h2>${movies[i].title}</h2>
             <p>${movies[i].overview}</p>
