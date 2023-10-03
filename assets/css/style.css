@@ -34,3 +34,11 @@ nav {
 .smol {
     font-size: 20px;
 }
+
+#dropdown1 li{
+    font-size: 16px;
+    color: black;
+    display: block;
+    line-height: 22px;
+    padding: 14px 16px
+}
