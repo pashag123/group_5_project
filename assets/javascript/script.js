@@ -19,13 +19,21 @@ const options = {
 //move fetch to be added with action
 fetch('https://api.themoviedb.org/3/discover/movie?include_adult=true&include_video=false&language=en-US&page=1&sort_by=popularity.desc', options)
     .then(response => response.json())
+   
     .then(function (data) {
         console.log(data)
         renderCards(data.results)
     })
     .catch(err => console.error(err));
 
-document.addEventListener('DOMContentLoaded', function () {
+
+
+
+
+
+
+
+    document.addEventListener('DOMContentLoaded', function () {
     var elems = document.querySelectorAll('.dropdown-trigger');
     var instances = M.Dropdown.init(elems, options);
     var instance = M.Dropdown.getInstance(elems);
@@ -39,7 +47,7 @@ function renderCards(movies) {
     var html = ""
     for (var i = 0; i < movies.length; i++) {
         html = html + `
-    <div class="col s12 m6 l3">
+    <div id="full-card" class="col s12 m6 l3">
     <div class="card">
         <div class="card-image">
             <div>
