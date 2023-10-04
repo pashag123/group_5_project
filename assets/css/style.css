@@ -9,15 +9,15 @@ h1 {
 }
 
 p {
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-
-nav {
-    background-color: #000000c0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .select {
     background-color: #6469b883;
+}
+
+#nav {
+    justify-content: space-around;
 }
 
 .btn-text {
@@ -35,7 +35,7 @@ nav {
     font-size: 20px;
 }
 
-#dropdown1 li{
+#dropdown1 li {
     font-size: 16px;
     color: black;
     display: block;
@@ -44,6 +44,10 @@ nav {
 }
 
 .card-container {
-height: 300px;
-
+    height: 300px;
+max-height: 300px;
+min-height: 300px;
+}
+.btn-bottom {
+    display: block;
 }
