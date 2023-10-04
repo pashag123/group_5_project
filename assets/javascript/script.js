@@ -26,6 +26,37 @@ fetch('https://api.themoviedb.org/3/discover/movie?include_adult=true&include_vi
     })
     .catch(err => console.error(err));
 
+    fetch('https://api.themoviedb.org/3/genre/movie/list?language=en', options)
+    .then(response => response.json())
+    .then(response => {
+        console.log(response)
+
+        for (let i = 0; i < response.genres.length; i++) {
+            console.log(response.genres[i]);
+            var a = document.createElement("option");
+            a.textContent = response.genres[i].name;
+            a.value = response.genres[i].id;
+            console.log(a)
+        }
+    })
+    .catch(err => console.error(err));
+
+// genre data to list items, use for loop
+// create new li element, append child to ul #dropdown1
+// object, array, object(id, name)   -take name and id both
+console.log();
+
+
+// for (let j=1; j < response.length; j++) {
+//     var a = response[j].j("name");
+//     console.log(a);
+// }
+
+
+
+document.createElement("li")
+var genreBtn = document.getElementById("dropdown1");
+genreBtn.appendChild("li").textContent = 
 
 
 
@@ -33,14 +64,10 @@ fetch('https://api.themoviedb.org/3/discover/movie?include_adult=true&include_vi
 
 
 
-document.addEventListener('DOMContentLoaded', function () {
-    var elems = document.querySelectorAll('.dropdown-trigger');
-    var instances = M.Dropdown.init(elems, options);
-    var instance = M.Dropdown.getInstance(elems);
-    //instance.open();
-    //instance.close();
-    //instance.destroy();
-});
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('select');
+        var instances = M.FormSelect.init(elems, options);
+      });
 
 
 function renderCards(movies) {
