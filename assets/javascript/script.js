@@ -31,6 +31,7 @@ fetch('https://api.themoviedb.org/3/discover/movie?include_adult=true&include_vi
     .then(response => {
         console.log(response)
 
+
         for (let i = 0; i < response.genres.length; i++) {
             console.log(response.genres[i]);
             var a = document.createElement("option");
@@ -41,29 +42,8 @@ fetch('https://api.themoviedb.org/3/discover/movie?include_adult=true&include_vi
     })
     .catch(err => console.error(err));
 
-// genre data to list items, use for loop
-// create new li element, append child to ul #dropdown1
-// object, array, object(id, name)   -take name and id both
-console.log();
 
-
-// for (let j=1; j < response.length; j++) {
-//     var a = response[j].j("name");
-//     console.log(a);
-// }
-
-
-
-document.createElement("li")
-var genreBtn = document.getElementById("dropdown1");
-genreBtn.appendChild("li").textContent = 
-
-
-
-
-
-
-
+    
     document.addEventListener('DOMContentLoaded', function() {
         var elems = document.querySelectorAll('select');
         var instances = M.FormSelect.init(elems, options);
