@@ -31,6 +31,7 @@ fetch('https://api.themoviedb.org/3/discover/movie?include_adult=true&include_vi
     .then(response => {
         console.log(response)
 
+
         for (let i = 0; i < response.genres.length; i++) {
             console.log(response.genres[i]);
             var a = document.createElement("option");
@@ -41,9 +42,8 @@ fetch('https://api.themoviedb.org/3/discover/movie?include_adult=true&include_vi
     })
     .catch(err => console.error(err));
 
-console.log();
 
-
+    
     document.addEventListener('DOMContentLoaded', function() {
         var elems = document.querySelectorAll('select');
         var instances = M.FormSelect.init(elems, options);
