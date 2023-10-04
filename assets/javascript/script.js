@@ -33,14 +33,10 @@ fetch('https://api.themoviedb.org/3/discover/movie?include_adult=true&include_vi
 
 
 
-document.addEventListener('DOMContentLoaded', function () {
-    var elems = document.querySelectorAll('.dropdown-trigger');
-    var instances = M.Dropdown.init(elems, options);
-    var instance = M.Dropdown.getInstance(elems);
-    //instance.open();
-    //instance.close();
-    //instance.destroy();
-});
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('select');
+        var instances = M.FormSelect.init(elems, options);
+      });
 
 
 function renderCards(movies) {
