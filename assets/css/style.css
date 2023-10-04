@@ -45,5 +45,10 @@ nav {
 
 .card-container {
 height: 300px;
+max-height: 300px;
+min-height: 300px;
+}
 
+.btn-bottom {
+    display: block;
 }
