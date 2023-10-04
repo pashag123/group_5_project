@@ -19,7 +19,7 @@ const options = {
 //move fetch to be added with action
 fetch('https://api.themoviedb.org/3/discover/movie?include_adult=true&include_video=false&language=en-US&page=1&sort_by=popularity.desc', options)
     .then(response => response.json())
-   
+
     .then(function (data) {
         console.log(data)
         renderCards(data.results)
@@ -33,7 +33,7 @@ fetch('https://api.themoviedb.org/3/discover/movie?include_adult=true&include_vi
 
 
 
-    document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () {
     var elems = document.querySelectorAll('.dropdown-trigger');
     var instances = M.Dropdown.init(elems, options);
     var instance = M.Dropdown.getInstance(elems);
@@ -49,27 +49,24 @@ function renderCards(movies) {
         html = html + `
     <div id="full-card" class="col s12 m6 l3">
     <div class="card">
-        <div class="card-image">
-            <div>
-                <img src="https://image.tmdb.org/t/p/original/${movies[i].poster_path}">
-            </div>
-            
-            <a class="btn-floating halfway-fab waves-effect waves-light red"><i
-                    class="material-icons">add</i></a>
-        </div>
-
-        <div class="card-content">
-            <div class="row">
-                <div class="col s6 m6 l6">${movies[i].release_date}</div>
-                <div class="col s6 m6 l6">${movies[i].vote_average}</div>
-            </div>
-            <h2>${movies[i].title}</h2>
-            <p>${movies[i].overview}</p>
-        </div>
+    <div class="card-image waves-effect waves-block waves-light">
+        <img class="activator" src="https://image.tmdb.org/t/p/original/${movies[i].poster_path}"></img>
     </div>
+    <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4">${movies[i].title}<i class="material-icons right">more_vert</i></span>
+        <p><a class="btn-floating halfway-fab waves-effect waves-light red"><i
+                    class="material-icons">add</i></a></p>
+    </div>
+    <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4">${movies[i].title}<i class="material-icons right">close</i></span>
+        <p>${movies[i].overview}</p>
+        <div class="col s6 m6 l6">Rating: ${movies[i].vote_average}</div>
+        <div class="col s6 m6 l6">${movies[i].release_date}</div>
+    </div>
+</div>
 </div>
     `
     }
-    var container = document.querySelector('.card-container .row') 
-    container.innerHTML = html 
+    var container = document.querySelector('.card-container .row')
+    container.innerHTML = html
 }
