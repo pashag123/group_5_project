@@ -38,6 +38,8 @@ fetch('https://api.themoviedb.org/3/discover/movie?include_adult=true&include_vi
             a.textContent = response.genres[i].name;
             a.value = response.genres[i].id;
             console.log(a)
+
+            document.querySelector('#genre-dropdown').appendChild(a)
         }
     })
     .catch(err => console.error(err));
