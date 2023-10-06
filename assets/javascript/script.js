@@ -8,6 +8,9 @@
 
 // var 
 
+let selectEl = document.querySelector('#genre-dropdown');
+
+
 const options = {
     method: 'GET',
     headers: {
@@ -26,30 +29,75 @@ fetch('https://api.themoviedb.org/3/discover/movie?include_adult=true&include_vi
     })
     .catch(err => console.error(err));
 
+   
     fetch('https://api.themoviedb.org/3/genre/movie/list?language=en', options)
     .then(response => response.json())
     .then(response => {
         console.log(response)
 
+        // let selectEl = document.querySelector('#genre-dropdown');
+        // let dropdown = document.querySelector('.dropdown-content');
 
         for (let i = 0; i < response.genres.length; i++) {
-            console.log(response.genres[i]);
             var a = document.createElement("option");
             a.textContent = response.genres[i].name;
             a.value = response.genres[i].id;
-            console.log(a)
-
-            document.querySelector('#genre-dropdown').appendChild(a)
+            console.log('OPTION EL', a)
+            selectEl.append(a);
+            console.log('TARGET EL', selectEl);
         }
+        initializeElems();
     })
     .catch(err => console.error(err));
 
-
-    
-    document.addEventListener('DOMContentLoaded', function() {
+    const initializeElems = function() {
         var elems = document.querySelectorAll('select');
         var instances = M.FormSelect.init(elems, options);
-      });
+      }
+    
+function handleOptionChange(e) {
+console.log(e.target.value)
+fetch(`https://api.themoviedb.org/3/discover/movie?include_adult=true&include_video=false&with_genres=${e.target.value}&language=en-US&page=1`, options)
+
+.then(response => response.json())
+.then(data => {
+    console.log(data)
+    renderCards(data.results)
+})
+}
+
+
+    document.addEventListener('DOMContentLoaded', initializeElems);
+
+   selectEl.addEventListener('change', handleOptionChange)
+   
+   
+   
+   
+    // fetch('https://api.themoviedb.org/3/genre/movie/list?language=en', options)
+    // .then(response => response.json())
+    // .then(response => {
+    //     console.log(response)
+
+
+    //     for (let i = 0; i < response.genres.length; i++) {
+    //         console.log(response.genres[i]);
+    //         var a = document.createElement("option");
+    //         a.textContent = response.genres[i].name;
+    //         a.value = response.genres[i].id;
+    //         console.log(a)
+
+    //         document.querySelector('#genre-dropdown').append(a)
+    //     }
+    // })
+    // .catch(err => console.error(err));
+
+
+    
+    // document.addEventListener('DOMContentLoaded', function() {
+    //     var elems = document.querySelectorAll('select');
+    //     var instances = M.FormSelect.init(elems, options);
+    //   });
 
 
 function renderCards(movies) {
