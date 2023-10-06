@@ -12,9 +12,12 @@ p {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-#center{
-
+#center {
+    display:flex;
+    align-items: center;
+    flex-wrap: wrap;
 }
+
 
 .select {
     background-color: #6469b883;
@@ -25,7 +28,7 @@ p {
 }
 
 .btn-text {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family:'Times New Roman', Times, serif;
     color: black;
     font-size: 25px;
     text-align: center;
