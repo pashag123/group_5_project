@@ -16,7 +16,6 @@ fetch('https://api.themoviedb.org/3/discover/movie?include_adult=true&include_vi
     .then(response => response.json())
 
     .then(function (data) {
-        console.log(data)
         renderCards(data.results)
     })
     .catch(err => console.error(err));
@@ -25,7 +24,6 @@ fetch('https://api.themoviedb.org/3/discover/movie?include_adult=true&include_vi
 fetch('https://api.themoviedb.org/3/genre/movie/list?language=en', options)
     .then(response => response.json())
     .then(response => {
-        console.log(response)
 
         // let selectEl = document.querySelector('#genre-dropdown');
         // let dropdown = document.querySelector('.dropdown-content');
@@ -34,9 +32,7 @@ fetch('https://api.themoviedb.org/3/genre/movie/list?language=en', options)
             var a = document.createElement("option");
             a.textContent = response.genres[i].name;
             a.value = response.genres[i].id;
-            console.log('OPTION EL', a)
             selectEl.append(a);
-            console.log('TARGET EL', selectEl);
         }
         initializeElems();
     })
@@ -48,12 +44,10 @@ const initializeElems = function () {
 }
 
 function handleOptionChange(e) {
-    console.log(e.target.value)
     fetch(`https://api.themoviedb.org/3/discover/movie?include_adult=true&include_video=false&with_genres=${e.target.value}&language=en-US&page=1`, options)
 
         .then(response => response.json())
         .then(data => {
-            console.log(data)
             renderCards(data.results)
         })
 }
@@ -65,56 +59,19 @@ selectEl.addEventListener('change', handleOptionChange)
 
 
 
-
-// fetch('https://api.themoviedb.org/3/genre/movie/list?language=en', options)
-// .then(response => response.json())
-// .then(response => {
-//     console.log(response)
-
-
-//     for (let i = 0; i < response.genres.length; i++) {
-//         console.log(response.genres[i]);
-//         var a = document.createElement("option");
-//         a.textContent = response.genres[i].name;
-//         a.value = response.genres[i].id;
-//         console.log(a)
-
-//         document.querySelector('#genre-dropdown').append(a)
-//     }
-// })
-// .catch(err => console.error(err));
-
-
-
-// document.addEventListener('DOMContentLoaded', function() {
-//     var elems = document.querySelectorAll('select');
-//     var instances = M.FormSelect.init(elems, options);
-//   });
-
-
 function renderCards(movies) {
     var html = ""
     for (var i = 0; i < movies.length; i++) {
         html = html + `
-        <div id="full-card" class="col s12 m6 l3">
+    <div id="full-card" class="col s12 m6 l3">
         <div class="card">
             <div class="card-image waves-effect waves-block waves-light">
                 <img class="activator" src="https://image.tmdb.org/t/p/original/${movies[i].poster_path}"></img>
             </div>
             <div class="card-content">
-                <span class="card-title activator grey-text text-darken-4">${movies[i].title}
-                <p><a class= "btn modal-trigger halfway-fab waves-effect waves-light black"><i
-                            class="material-icons">local_bar</i></a></p>
-                <div id="modal1" class="modal">
-                    <div class="modal-content">
-                        <h4>Modal Header</h4>
-                        <p>A bunch of text</p>
-                    </div>
-                    <div class="modal-footer">
-                        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-                    </div>
-                </div>
+                <span id="card-title" class="card-title activator grey-text text-darken-4">${movies[i].title}
             </div>
+            
             <div class="card-reveal">
                 <span class="card-title grey-text text-darken-4">${movies[i].title}<i
                         class="material-icons right">close</i></span>
@@ -134,7 +91,9 @@ function renderCards(movies) {
 
 
 
-async function fetchDrinks() {
+async function fetchDrinks(e) {
+    document.querySelector('.modal-content').textContent = ''
+    initializeElemsTwo()
     const url = 'https://the-cocktail-db.p.rapidapi.com/random.php';
     const optionDrinks = {
         method: 'GET',
@@ -147,11 +106,21 @@ async function fetchDrinks() {
     try {
         const response = await fetch(url, optionDrinks);
         const result = await response.json();
-        console.log(result);
+        console.log(result)
+
+        document.querySelector('.modal-content').textContent = result.drinks[0].strDrink
+        
     } catch (error) {
         console.error(error);
     }
 
 }
 
-fetchDrinks();
+const initializeElemsTwo = function(){
+    var elements = document.querySelectorAll('.modal');
+    var instances = M.Modal.init(elements, options);
+}
+document.addEventListener('DOMContentLoaded', initializeElemsTwo);
+
+document.querySelector('#drink').addEventListener('click', fetchDrinks)
+
