@@ -13,7 +13,7 @@ p {
 }
 
 #center {
-    display:flex;
+    display: flex;
     align-items: center;
     flex-wrap: wrap;
 }
@@ -28,7 +28,7 @@ p {
 }
 
 .btn-text {
-    font-family:'Times New Roman', Times, serif;
+    font-family: 'Times New Roman', Times, serif;
     color: black;
     font-size: 25px;
     text-align: center;
@@ -52,9 +52,32 @@ p {
 
 .card-container {
     height: 300px;
-max-height: 300px;
-min-height: 300px;
+    max-height: 300px;
+    min-height: 300px;
 }
+
 .btn-bottom {
     display: block;
+}
+
+@media only screen and (min-width: 993px) {
+    #card-title {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 12ch;
+    }
+}
+
+@media only screen and (min-width: 601px) {
+    #card-title {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 15ch;
+    }
+    
+    #divider {
+        display: none;
+    }
 }
