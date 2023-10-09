@@ -10,14 +10,18 @@ main {
 }
 
 h1 {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: fantasy;
     text-decoration: underline;
     background-color: #D1981D;
     color: #111111;
 }
 
 p {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: fantasy;
+}
+
+.card-text {
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #center {
@@ -68,6 +72,16 @@ p {
     display: block;
 }
 
+div.card-content {
+    background-color: #111111;
+}
+
+.card .card-reveal {
+    background-color: #111111;
+    color:white;
+}
+
+
 @media only screen and (min-width: 993px) {
     #card-title {
         white-space: nowrap;
@@ -107,3 +121,8 @@ footer {
 margin-top: 3%;
       }
 
+.page-footer {
+    background-color:#D1981D;
+    color: #111111;
+    font-family: fantasy;
+}

@@ -69,13 +69,13 @@ function renderCards(movies) {
                 <img class="activator" src="https://image.tmdb.org/t/p/original/${movies[i].poster_path}"></img>
             </div>
             <div class="card-content">
-                <span id="card-title" class="card-title activator grey-text text-darken-4">${movies[i].title}
+                <span id="card-title" class="card-title activator white-text">${movies[i].title}
             </div>
             
             <div class="card-reveal">
-                <span class="card-title grey-text text-darken-4">${movies[i].title}<i
+                <span class="card-title white-text">${movies[i].title}<i
                         class="material-icons right">close</i></span>
-                <p>${movies[i].overview}</p>
+                <p class="card-text"> ${movies[i].overview}</p>
                 <div class="col s6 m6 l6">Rating: ${movies[i].vote_average}</div>
                 <div class="col s6 m6 l6">${movies[i].release_date}</div>
             </div>
