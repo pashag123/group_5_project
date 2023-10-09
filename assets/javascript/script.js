@@ -106,14 +106,21 @@ async function fetchDrinks(e) {
     try {
         const response = await fetch(url, optionDrinks);
         const result = await response.json();
-        console.log(result)
+        const drinkData = result.drinks[0];
 
-        document.querySelector('.modal-content').textContent = result.drinks[0].strDrink
-        
+        const modalContent = document.querySelector('.modal-content');
+        modalContent.innerHTML = `
+        <div id="drink-container" class="container">
+            <h5>${drinkData.strDrink}</h5>
+            <img src="${drinkData.strDrinkThumb}" alt="${drinkData.strDrink}" class="drink-image">
+            <p>Glass: ${drinkData.strGlass}</p>
+            <p>Ingredients: ${drinkData.strIngredient1 ? drinkData.strIngredient1 + ', ' : ''}${drinkData.strIngredient2 ? drinkData.strIngredient2 + ', ' : ''}${drinkData.strIngredient3 ? drinkData.strIngredient3 + ', ' : ''}${drinkData.strIngredient4 ? drinkData.strIngredient4 + ', ' : ''}${drinkData.strIngredient5 ? drinkData.strIngredient5 + ', ' : ''}</p>
+            <p>Instructions: ${drinkData.strInstructions}</p>
+        </div>
+        `;
     } catch (error) {
         console.error(error);
     }
-
 }
 
 const initializeElemsTwo = function(){
@@ -124,3 +131,19 @@ document.addEventListener('DOMContentLoaded', initializeElemsTwo);
 
 document.querySelector('#drink').addEventListener('click', fetchDrinks)
 
+document.addEventListener('DOMContentLoaded', () => {
+    // Check if the 'visits' key exists in localStorage
+    if(localStorage.getItem('visits')) {
+        // If the key exists, increment the value and update the localStorage
+        let visits = parseInt(localStorage.getItem('visits'));
+        visits++;
+        localStorage.setItem('visits', visits);
+    } else {
+        // If the key doesn't exist, set it to 1
+        localStorage.setItem('visits', 1);
+    }
+
+    // Retrieve the visit count from localStorage and display it in the footer
+    const visitCount = localStorage.getItem('visits');
+    document.getElementById('visit-count').textContent = visitCount;
+});
