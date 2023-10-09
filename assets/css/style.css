@@ -1,6 +1,12 @@
 body {
+<<<<<<< Updated upstream
     background-color: rgb(255, 255, 255);
     display: flex;
+=======
+    background-color: #E1DCD0;
+    position: relative;
+    min-height: 100%;
+>>>>>>> Stashed changes
     min-height: 100vh;
     flex-direction: column;
 }
@@ -12,7 +18,8 @@ main {
 h1 {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-decoration: underline;
-    background-color: rgba(248, 216, 32, 0.822);
+    background-color: #D1981D;
+    color: #111111;
 }
 
 p {
@@ -27,7 +34,7 @@ p {
 
 
 .select {
-    background-color: #6469b883;
+    background-color: #A36026;
 }
 
 #nav {
@@ -42,7 +49,7 @@ p {
 }
 
 .select:hover {
-    background-color: rgba(189, 189, 189, 0.288);
+    background-color: #832002;
 }
 
 .smol {
@@ -51,7 +58,7 @@ p {
 
 #dropdown1 li {
     font-size: 16px;
-    color: black;
+    color: #111111;
     display: block;
     line-height: 22px;
     padding: 14px 16px
