@@ -1,12 +1,6 @@
 body {
-<<<<<<< Updated upstream
     background-color: rgb(255, 255, 255);
     display: flex;
-=======
-    background-color: #E1DCD0;
-    position: relative;
-    min-height: 100%;
->>>>>>> Stashed changes
     min-height: 100vh;
     flex-direction: column;
 }
