@@ -1,128 +1,151 @@
 body {
-    background-color: rgb(255, 255, 255);
+    background-color: #e1dcd0;
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-}
-
-main {
+   }
+   
+   main {
     flex: 1 0 auto;
-}
-
-h1 {
-    font-family: fantasy;
+   }
+   
+   h1 {
+    font-family: 'Audiowide', sans-serif;
     text-decoration: underline;
-    background-color: #D1981D;
+    background-color: #d1981d;
     color: #111111;
-}
-
-p {
-    font-family: fantasy;
-}
-
-.card-text {
+   }
+   
+   p {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+     Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+   }
+   
+   .movie-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: space-between;
+    height: auto;
+   }
+   
+   #full-card {
+    min-width: 285px;
+    max-width: calc(25% - 15px);
+   }
+   
+   .card-text {
     font-family: Arial, Helvetica, sans-serif;
-}
-
-#center {
+    font-size: large;
+   }
+   
+   #center {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-}
-
-
-.select {
-    background-color: #A36026;
-}
-
-#nav {
-    justify-content: space-around;
-}
-
-.btn-text {
-    font-family: 'Times New Roman', Times, serif;
+    justify-content: space-between;
+   }
+   
+   .select {
+    background-color: #a36026;
+   }
+   
+   .btn-text {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: black;
-    font-size: 25px;
-    text-align: center;
-}
-
-.select:hover {
-    background-color: #832002;
-}
-
-.smol {
     font-size: 20px;
-}
-
-#dropdown1 li {
-    font-size: 16px;
-    color: #111111;
+    text-align: center;
+   }
+   
+   .select:hover {
+    background-color: #832002;
+   }
+   
+   .smol {
+    font-size: 20px;
+   }
+   
+   .card {
+    margin: 0px;
+   }
+   
+   .btn-bottom {
     display: block;
-    line-height: 22px;
-    padding: 14px 16px
-}
-
-.card-container {
-    height: 300px;
-    max-height: 300px;
-    min-height: 300px;
-}
-
-.btn-bottom {
-    display: block;
-}
-
-div.card-content {
+   }
+   
+   div.card-content {
     background-color: #111111;
-}
-
-.card .card-reveal {
+   }
+   
+   .card .card-reveal {
     background-color: #111111;
-    color:white;
-}
-
-
-@media only screen and (min-width: 993px) {
+    color: white;
+   }
+   
+   .row .col.m5 {
+    margin-left: 0;
+   }
+   
+   @media only screen and (min-width: 993px) {
     #card-title {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        max-width: 12ch;
+     white-space: nowrap;
+     overflow: hidden;
+     text-overflow: ellipsis;
+     max-width: 12ch;
     }
-}
-
-@media only screen and (min-width: 601px) {
+   }
+   
+   @media only screen and (min-width: 601px) {
     #card-title {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        max-width: 15ch;
+     white-space: nowrap;
+     overflow: hidden;
+     text-overflow: ellipsis;
+     max-width: 15ch;
     }
-    
+   
     #divider {
-        display: none;
+     display: none;
     }
-}
-
-.drink-image{
+   }
+   
+   .modal-content .modal-footer {
+    background-color: #000000;
+   }
+   
+   #drink-container.container {
+    background-color: #e1dcd0;
+    padding: 50px;
+   }
+   
+   .drink-image {
     max-width: 100%;
     max-height: 100%;
     padding-bottom: 5%;
     justify-content: center;
     align-items: center;
-}
-
-h5{
+   }
+   
+   h5 {
     text-align: center;
-    padding-bottom: 5%;
-}
-
-footer {
-margin-top: 3%;
-      }
-
-.page-footer {
-    background-color:#D1981D;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+     Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: #111111;
-    font-family: fantasy;
-}
+    font-style: italic;
+    font-size: 40px;
+   }
+   
+   .drink-text {
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+   }
+   
+   footer {
+    margin-top: 3%;
+   }
+   
+   .page-footer {
+    background-color: #d1981d;
+    color: #111111;
+    font-family: Arial, Helvetica, sans-serif;
+   }
