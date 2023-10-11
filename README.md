@@ -10,10 +10,17 @@ The engine behind this app is of course the two APIs.  First there is the movie 
 
 Yet these three calls use the same api, referred to as The Movie Database API, for these results.  What about the drink?  This is handled using The Cocktail DB API, which is hosted on an api hub called Rapid API.  The endpoint used in our app is the one which looks up a random drink.  We then format and display the relevant data returned: name, image, ingredients and recipe.  This is all displayed with a modal.  
 
-Screenshot
+## Screenshot
 <img src="./assets/images/Screenshot 2023-10-09 222855.png">
 
 
+
+
+## Acknowledgement
+Special thanks to Diarmuid Murphy and Meg Meyers for aiding in the creation of this app.
+
+
+## Links
 Github Link
 https://github.com/pashag123/group_5_project
 
